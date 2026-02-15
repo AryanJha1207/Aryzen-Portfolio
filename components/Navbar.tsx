@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick, activeSection, totalSection
         <div className="absolute inset-0 -z-20 overflow-hidden rounded-[1.5rem] pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-20">
           <video
             ref={videoRef}
-            src="Bhedaghat.mp4" // <-- PASTE YOUR HOVER VIDEO LOCATION HERE
+            src="/Media/Bhedaghat.mp4" // <-- PASTE YOUR HOVER VIDEO LOCATION HERE
             className="w-full h-full object-cover blur-sm"
             muted
             loop

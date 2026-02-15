@@ -58,14 +58,14 @@ const App: React.FC = () => {
             {/* LAYER 1: IMAGE (Middle Layer - sits behind text) */}
             <div className="absolute inset-0 z-10 flex items-end justify-center md:justify-start px-0 md:pl-10 lg:pl-20 overflow-hidden pointer-events-none">
               <img
-                src="Media/Profile.png"
+                src="/Media/Profile.png"
                 alt="Aryan Profile"
                 className="w-auto h-[50vh] sm:h-[55vh] md:h-[65vh] lg:h-[80vh] max-w-none object-contain object-bottom transition-all duration-1000 transform translate-y-0 scale-100"
                 style={{ filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.8))' }}
                 onError={(e) => {
                   const target = e.currentTarget;
                   if (!target.src.includes('Media/Profile.png')) {
-                    target.src = 'Media/Profile.png';
+                    target.src = '/Media/Profile.png';
                   }
                 }}
               />

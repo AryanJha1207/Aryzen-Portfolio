@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
     longDescription: 'A classic clicker game where players rack up points through fast interactions. Implemented complex logic for score multipliers and achievements. Focused on smooth UI animations and low-latency feedback.',
     techStack: ['JavaScript', 'HTML5 Canvas', 'CSS Animations'],
     imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000',
-    demoUrl: 'https://click-o-win.vercel.app/', 
+    demoUrl: 'https://click-o-win.vercel.app/',
   },
   {
     id: 'drumkit',
@@ -39,13 +39,13 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     so it triggers immediately on card hover.
   */
   {
-    url: './Media/Bhedaghat.mp4', // <-- PASTE HOMETOWN VIDEO LOCATION HERE
+    url: '/Media/Bhedaghat.mp4', // <-- PASTE HOMETOWN VIDEO LOCATION HERE
     title: 'Dhuandhar Falls',
     category: 'Hometown',
     type: 'video'
   },
   {
-    url: './Media/Marble-Rocks.mp4',
+    url: '/Media/Marble-Rocks.mp4',
     title: 'Marble Rocks of Bhedaghat',
     category: 'Hometown',
     type: 'video'
@@ -60,20 +60,20 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     type: 'video'
   },
   {
-    url: './Media/classroom.png',
+    url: '/Media/classroom.png',
     title: 'Classroom at Vedam',
     category: 'College',
     type: 'image'
   },
   {
-    url: './Media/Deepotsav.mp4',
+    url: '/Media/Deepotsav.mp4',
     title: 'Deepotsav',
     category: 'Hometown',
     type: 'video'
   },
   {
-    url: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1000',
-    title: 'Late Night Debugging',
+    url: '/Media/24-HR-Hackathon.jpg',
+    title: '24 HR HACKATHON',
     category: 'College',
     type: 'image'
   }
