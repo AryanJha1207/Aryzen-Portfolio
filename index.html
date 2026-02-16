@@ -1,27 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Personal Portfolio | Aryzen Designer</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syncopate:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" as="image" href="/Media/Profile.png">
   <style>
     :root {
       --accent-red: #ef4444;
       --accent-purple: #a855f7;
     }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #020617;
       color: white;
       overflow: hidden;
       touch-action: pan-y;
+      scroll-behavior: smooth;
+      /* Force smooth scroll natively */
     }
+
+    .will-change-transform {
+      will-change: transform;
+    }
+
     .font-sync {
       font-family: 'Syncopate', sans-serif;
     }
+
     .snap-container {
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
@@ -29,9 +41,11 @@
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
+
     .snap-container::-webkit-scrollbar {
       display: none;
     }
+
     .snap-section {
       scroll-snap-align: start;
       scroll-snap-stop: always;
@@ -43,6 +57,7 @@
       position: relative;
       padding: clamp(0.5rem, 3vw, 2.5rem);
     }
+
     .matte-glass {
       background: rgba(15, 23, 42, 0.45);
       backdrop-filter: blur(30px);
@@ -50,42 +65,58 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .text-gradient {
       background: linear-gradient(to right, var(--accent-red), var(--accent-purple));
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
-      display: inline-block; /* Essential for background clip */
+      display: inline-block;
+      /* Essential for background clip */
     }
-    
+
     /* Elegant Logo Animation - Fixed visibility and specific letter-spacing */
     .aryzen-logo {
       display: inline-block;
       transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      letter-spacing: 0.1em; /* Initial tracking */
+      letter-spacing: 0.1em;
+      /* Initial tracking */
       z-index: 10;
     }
+
     .aryzen-logo:hover {
-      letter-spacing: 6px; /* As requested: roughly 3px on hover */
+      letter-spacing: 6px;
+      /* As requested: roughly 3px on hover */
       filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.6));
       transform: scale(1.02);
     }
 
     /* Responsive Font Clamping */
     .hero-title {
-      font-size: clamp(2.4rem, 9vw, 8rem);
+      font-size: clamp(2.8rem, 9vw, 5.5rem);
     }
+
     .section-title {
-      font-size: clamp(1.4rem, 6vw, 4rem);
+      font-size: clamp(2rem, 7vw, 4rem);
     }
+
     .project-title {
-      font-size: clamp(1.3rem, 5vw, 4.5rem);
+      font-size: clamp(1.8rem, 6vw, 4.5rem);
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
     }
+
     .animate-float {
       animation: float 5s ease-in-out infinite;
     }
@@ -93,12 +124,13 @@
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
+
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
   </style>
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
@@ -107,10 +139,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
+
 <body class="antialiased">
   <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

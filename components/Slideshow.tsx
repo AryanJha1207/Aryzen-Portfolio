@@ -25,7 +25,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ onOpenGallery, filter = 'All' }) 
   // Explicit playback control when index or filter changes
   useEffect(() => {
     if (filteredImages.length === 0) return;
-    
+
     const currentItem = filteredImages[currentIndex];
     const currentVideo = videoRefs.current[currentIndex];
 
@@ -41,7 +41,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ onOpenGallery, filter = 'All' }) 
     if (filteredImages.length <= 1) return;
 
     const currentItem = filteredImages[currentIndex];
-    
+
     let duration = 4000;
     if (currentItem && isVideo(currentItem)) {
       duration = (filter === 'Hometown') ? 20000 : 5000;
@@ -61,9 +61,8 @@ const Slideshow: React.FC<SlideshowProps> = ({ onOpenGallery, filter = 'All' }) 
         return (
           <div
             key={`${filter}-${img.url}-${idx}-${itemIsVideo}`}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
-            }`}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+              }`}
           >
             {itemIsVideo ? (
               <video
@@ -85,7 +84,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ onOpenGallery, filter = 'All' }) 
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/10 to-transparent" />
             <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 right-6 md:right-12">
               <span className="text-[9px] md:text-xs font-black uppercase tracking-[0.3em] text-red-500 mb-2 block">
-                {img.category}
+                {img.displayCategory || img.category}
               </span>
               <h3 className="text-sm md:text-2xl lg:text-3xl font-black font-sync text-white uppercase line-clamp-2 leading-tight">{img.title}</h3>
             </div>
@@ -107,11 +106,11 @@ const Slideshow: React.FC<SlideshowProps> = ({ onOpenGallery, filter = 'All' }) 
           Explore Full Gallery
         </button>
       </div>
-      
+
       <div className="absolute top-6 right-6 md:top-12 md:right-12 flex space-x-1.5 md:space-x-2">
         {filteredImages.map((_, idx) => (
-          <div 
-            key={idx} 
+          <div
+            key={idx}
             className={`h-0.5 md:h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 md:w-12 bg-red-500' : 'w-2 md:w-3 bg-white/20'}`}
           />
         ))}

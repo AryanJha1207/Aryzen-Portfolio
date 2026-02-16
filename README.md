@@ -119,6 +119,6 @@ All content—projects, gallery images, and social links—is managed via `const
 ---
 
 <div align="center">
-  <p>Engineered with ❤️ by <b>Aryzen</b></p>
+  <p>Made with ❤️ by <b>Aryzen Nex</b></p>
   <p><i>"Building the Next Operating System is my Core Directive."</i></p>
 </div>
