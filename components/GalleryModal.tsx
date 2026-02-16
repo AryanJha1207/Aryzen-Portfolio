@@ -62,7 +62,12 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ isOpen, onClose }) => {
                   muted
                   loop
                   playsInline
-                  autoPlay
+                  preload="metadata"
+                  onMouseEnter={(e) => e.currentTarget.play().catch(() => { })}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.pause();
+                    e.currentTarget.currentTime = 0;
+                  }}
                 />
               ) : (
                 <img

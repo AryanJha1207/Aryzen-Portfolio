@@ -68,10 +68,16 @@ const Slideshow: React.FC<SlideshowProps> = ({ onOpenGallery, filter = 'All' }) 
               <video
                 ref={el => { videoRefs.current[idx] = el; }}
                 src={img.url}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                 muted
                 loop
                 playsInline
+                preload="metadata"
+                onMouseEnter={(e) => e.currentTarget.play().catch(() => { })}
+                onMouseLeave={(e) => {
+                  e.currentTarget.pause();
+                  e.currentTarget.currentTime = 0; // Optional: Reset to start
+                }}
               />
             ) : (
               <img
