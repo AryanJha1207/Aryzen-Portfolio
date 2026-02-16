@@ -179,38 +179,38 @@ const App: React.FC = () => {
         {/* PROJECTS */}
         {PROJECTS.map((project, idx) => (
           <section key={project.id} className="snap-section">
-            <div className="w-full h-full matte-glass rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row items-center gap-6 md:gap-16 p-5 md:p-12 lg:p-20 pt-20 md:pt-12">
-              <div className={`flex-[1.2] space-y-4 md:space-y-12 ${idx % 2 === 0 ? 'md:order-1' : 'md:order-2'} order-2`}>
-                <div className="space-y-3 md:space-y-6">
-                  <h3 className="font-sync text-sm md:text-sm text-red-500 font-bold tracking-[0.3em] uppercase">Project 0{idx + 1}</h3>
+            <div className="w-full h-full matte-glass rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row items-center gap-3 md:gap-16 p-4 md:p-12 lg:p-20 pt-16 md:pt-12">
+              <div className={`flex-[1.2] flex flex-col justify-center space-y-2 md:space-y-12 ${idx % 2 === 0 ? 'md:order-1' : 'md:order-2'} order-2 w-full min-h-0`}>
+                <div className="space-y-2 md:space-y-6 shrink-0">
+                  <h3 className="font-sync text-[10px] md:text-sm text-red-500 font-bold tracking-[0.3em] uppercase">Project 0{idx + 1}</h3>
                   <h2 className="project-title font-black font-sync uppercase leading-tight">{project.title}</h2>
-                  <p className="text-sm md:text-lg text-slate-400 leading-relaxed font-medium opacity-80 line-clamp-3 md:line-clamp-none">
+                  <p className="text-xs md:text-lg text-slate-400 leading-relaxed font-medium opacity-80 line-clamp-3 md:line-clamp-none">
                     {project.longDescription}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2 md:gap-3">
+                <div className="flex flex-wrap gap-1.5 md:gap-3 shrink-0">
                   {project.techStack.map(tech => (
-                    <span key={tech} className="px-3 md:px-5 py-2 md:py-2.5 bg-white/5 rounded-xl md:rounded-2xl text-xs md:text-xs font-black uppercase tracking-widest border border-white/10 text-slate-300">
+                    <span key={tech} className="px-2 md:px-5 py-1 md:py-2.5 bg-white/5 rounded-lg md:rounded-2xl text-[10px] md:text-xs font-black uppercase tracking-widest border border-white/10 text-slate-300">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-3 pt-2">
+                <div className="flex flex-wrap gap-2 md:gap-3 pt-1 md:pt-2 shrink-0">
                   <a
                     href={project.repoUrl || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-6 md:px-8 py-4 md:py-5 bg-white text-slate-950 rounded-xl md:rounded-2xl font-black uppercase text-xs md:text-xs tracking-widest hover:scale-105 transition-all active:scale-95 group"
+                    className="flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-3 md:py-5 bg-white text-slate-950 rounded-xl md:rounded-2xl font-black uppercase text-[10px] md:text-xs tracking-widest hover:scale-105 transition-all active:scale-95 group"
                   >
-                    <svg className="w-4 h-4 md:w-5 md:h-5 text-slate-950" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+                    <svg className="w-3.5 h-3.5 md:w-5 md:h-5 text-slate-950" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
                     <span>View Code</span>
                   </a>
                   {project.id !== 'yt-clone' && (
                     <button
                       onClick={() => setSandboxProject({ title: project.title, url: project.demoUrl })}
-                      className="flex items-center space-x-2 px-6 md:px-8 py-4 md:py-5 bg-gradient-to-r from-red-600 to-purple-600 text-white rounded-xl md:rounded-2xl font-black uppercase text-xs md:text-xs tracking-widest hover:scale-105 transition-all shadow-xl active:scale-95"
+                      className="flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-3 md:py-5 bg-gradient-to-r from-red-600 to-purple-600 text-white rounded-xl md:rounded-2xl font-black uppercase text-[10px] md:text-xs tracking-widest hover:scale-105 transition-all shadow-xl active:scale-95"
                     >
                       <svg className="w-3.5 h-3.5 md:w-4 md:h-4 fill-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                       <span>Try Now</span>
@@ -219,8 +219,8 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className={`flex-[1.1] w-full h-[25vh] md:h-full relative ${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'} order-1`}>
-                <div className="w-full h-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 group shadow-2xl relative bg-slate-900/40">
+              <div className={`flex-[1] w-full h-[20vh] md:h-full relative shrink-0 ${idx % 2 === 0 ? 'md:order-2' : 'md:order-1'} order-1`}>
+                <div className="w-full h-full rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-white/10 group shadow-2xl relative bg-slate-900/40">
                   <img src={project.imageUrl} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                 </div>
